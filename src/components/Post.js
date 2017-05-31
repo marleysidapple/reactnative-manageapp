@@ -9,14 +9,20 @@ class Post extends Component {
 		super(props);
 	}
 
-	componentWillMount(){
+	componentDidMount(){
 		this.props.showAllPost();
+	}
+
+	showAllPosts(){
+		return this.props.post.map((ps) => {
+			return <Text>{ps.title}</Text>;
+		});
 	}
 
 	render(){
 		return(
 			<View style={styles.postWrapper}>
-				<Text>Hello this is post</Text>
+				{this.showAllPosts()}
 			</View>
 		);
 	}
@@ -35,9 +41,9 @@ const styles = StyleSheet.create({
 
 
 function mapStateToProps(state){
-	console.log(state);
+	console.log(state.posts.all);
 	return {
-		pos : state.posts
+		post : state.posts.all
 	};
 }
 

@@ -1,10 +1,11 @@
 import { FETCH_ALL_POST } from './../actions';
 
+const INITIAL_STATE = {all: []};
 
-export default function(state=null, action){
+export default function(state=INITIAL_STATE, action){
 	switch(action.type){
 		case FETCH_ALL_POST:
-			console.log(action.payload);
+			return {...state, all: action.payload.data };
 		default:
 			return state;
 	}

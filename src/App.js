@@ -1,9 +1,17 @@
+/*
+* in order to read the data from the external api, we must use applyMiddleware, thunk and promise
+*/
+
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Post from './components/Post';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import promise from 'redux-promise';
 import reducers from './reducers';
+
+const store = applyMiddleware(thunk, promise)(createStore);
 
 class App extends Component {
 
@@ -14,7 +22,7 @@ class App extends Component {
 
 	render(){
 		return (
-			<Provider store={createStore(reducers)}>
+			<Provider store={store(reducers)}>
 				<Post />
 			</Provider>
 		);	
