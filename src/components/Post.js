@@ -15,16 +15,8 @@ class Post extends Component {
 	}
 
 	componentWillMount(){
-		//axios.get('https://iamsiddy.com/api/managerapi/public/api/v1/posts').then(res => console.log(res));
+		axios.get('http://localhost:8000/api/v1/posts').then(res => console.log(res));
 		//this.props.renderAllPost;
-		axios({
-		  method:'get',
-		  url:'http://iamsiddy.com/api/managerapi/public/api/v1/posts',
-		  //responseType:'stream'
-		})
-		  .then(function(response) {
-		  	console.log(response);
-		});
 	}
 
 	render(){
