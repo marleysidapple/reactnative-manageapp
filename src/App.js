@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import Post from './components/Post';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -21,10 +21,10 @@ class App extends Component {
 	}
 }
 
-const styles = StyleSheet.create({
+const styles ={
 	 baseText: {
 	    fontFamily: 'Open Sans',
 	  }
-});
+};
 
 export default App;

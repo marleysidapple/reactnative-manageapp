@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { renderAllPost } from './../actions';
-import axios from 'axios';
-
+import { showAllPost } from './../actions/index';
 
 class Post extends Component {
 
 	constructor(props){
 		super(props);
-		this.state = {
-			posts: []
-		}
 	}
 
 	componentWillMount(){
-		axios.get('http://localhost:8000/api/v1/posts').then(res => console.log(res));
-		//this.props.renderAllPost;
+		this.props.showAllPost();
 	}
 
 	render(){
-		return (
+		return(
 			<View style={styles.postWrapper}>
-				<Text>This is post</Text>
+				<Text>Hello this is post</Text>
 			</View>
 		);
 	}
+
 }
 
 const styles = StyleSheet.create({
 	  postWrapper: {
 	  	flex: 1,
 	  	backgroundColor: '#e5e7e8',
+	  	justifyContent: 'center',
+	  	alignItems: 'center',
 	  	paddingTop: 30
 	  }
 });
@@ -39,8 +36,10 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
 	console.log(state);
-	return { };
+	return {
+		pos : state.posts
+	};
 }
 
 
-export default connect(mapStateToProps, {renderAllPost})(Post); 
+export default connect(mapStateToProps, {showAllPost})(Post);
