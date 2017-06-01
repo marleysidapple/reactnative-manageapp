@@ -15,7 +15,7 @@ class Post extends Component {
 
 	showAllPosts(){
 		return this.props.post.map((ps) => {
-			return <Text>{ps.title}</Text>;
+			return <Text key={ps.id}>{ps.title}</Text>;
 		});
 	}
 
