@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { showAllPost } from './../actions/index';
+import ListDetail  from './../common/ListDetail';
 
 class Post extends Component {
 
@@ -14,9 +15,12 @@ class Post extends Component {
 	}
 
 	showAllPosts(){
-		return this.props.post.map((ps) => {
-			return <Text key={ps.id}>{ps.title}</Text>;
-		});
+		return this.props.post.map((ps) => 
+			<ListDetail allDetail={ps}/>
+			// <Text>{ps.email}</Text>
+			//return <ListDetail detail={ps} />
+			//return <Text key={ps.id}>{ps.email}</Text>;
+		);
 	}
 
 	render(){
