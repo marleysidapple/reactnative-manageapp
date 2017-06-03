@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { showAllPost } from './../actions/index';
 import ListDetail  from './../common/ListDetail';
@@ -16,7 +16,7 @@ class Post extends Component {
 
 	showAllPosts(){
 		return this.props.post.map((ps) => 
-			<ListDetail allDetail={ps}/>
+			<ListDetail key={ps.id} allDetail={ps}/>
 			// <Text>{ps.email}</Text>
 			//return <ListDetail detail={ps} />
 			//return <Text key={ps.id}>{ps.email}</Text>;
@@ -25,9 +25,9 @@ class Post extends Component {
 
 	render(){
 		return(
-			<View style={styles.postWrapper}>
+			<ScrollView style={styles.postWrapper}>
 				{this.showAllPosts()}
-			</View>
+			</ScrollView>
 		);
 	}
 
@@ -37,8 +37,6 @@ const styles = StyleSheet.create({
 	  postWrapper: {
 	  	flex: 1,
 	  	backgroundColor: '#e5e7e8',
-	  	justifyContent: 'center',
-	  	alignItems: 'center',
 	  	paddingTop: 35
 	  }
 });

@@ -9,12 +9,24 @@ class ListDetail extends Component {
 
 	render(){
 		return(
-			<View>
+			<View style={styles.detailwrapper}>
 				<Text>{this.props.allDetail.email}</Text>
 			</View>
 		);
 	}
 }
+
+
+const styles = {
+	detailwrapper: {
+		height: 40,
+		borderBottomWidth: 1,
+		borderBottomColor: '#dbd6d6',  
+		paddingLeft: 10,
+		justifyContent: 'center',
+		alignItems: 'flex-start',
+	}
+};
 
 
 export default ListDetail;
