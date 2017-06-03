@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 	  	backgroundColor: '#e5e7e8',
 	  	justifyContent: 'center',
 	  	alignItems: 'center',
-	  	paddingTop: 30
+	  	paddingTop: 35
 	  }
 });
 
