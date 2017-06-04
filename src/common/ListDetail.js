@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class ListDetail extends Component {
 
@@ -10,7 +11,8 @@ class ListDetail extends Component {
 	render(){
 		return(
 			<View style={styles.detailwrapper}>
-				<Text>{this.props.allDetail.email}</Text>
+				<Text style={styles.email}>{this.props.allDetail.email}</Text>
+				<Text style={styles.emailOne}>{'>'}</Text>
 			</View>
 		);
 	}
@@ -19,13 +21,25 @@ class ListDetail extends Component {
 
 const styles = {
 	detailwrapper: {
+		flexDirection: 'row',
+		justifyContent: 'flex-start',
 		height: 40,
 		borderBottomWidth: 1,
 		borderBottomColor: '#dbd6d6',  
 		paddingLeft: 10,
-		justifyContent: 'center',
-		alignItems: 'flex-start',
+		position: 'relative',
+		alignItems: 'center'
+	},
+
+	email:{
+		flex: 1,
+	},
+
+
+	emailOne:{
+		width: 40 //this one is necessary
 	}
+
 };
 
 

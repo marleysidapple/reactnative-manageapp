@@ -35,15 +35,14 @@ class Post extends Component {
 
 const styles = StyleSheet.create({
 	  postWrapper: {
-	  	flex: 1,
 	  	backgroundColor: '#e5e7e8',
-	  	paddingTop: 35
+	  	//justifyContent: 'center'
 	  }
 });
 
 
 function mapStateToProps(state){
-	console.log(state.posts.all);
+	//console.log(state.posts.all);
 	return {
 		post : state.posts.all
 	};
