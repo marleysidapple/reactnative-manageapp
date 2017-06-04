@@ -12,7 +12,7 @@ class ListDetail extends Component {
 		return(
 			<View style={styles.detailwrapper}>
 				<Text style={styles.email}>{this.props.allDetail.email}</Text>
-				<Text style={styles.emailOne}>{'>'}</Text>
+				<Icon style={styles.emailOne} name="chevron-right" size={15} color="#dbd6d6" />
 			</View>
 		);
 	}
