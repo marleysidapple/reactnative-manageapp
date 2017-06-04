@@ -12,7 +12,7 @@ class ListDetail extends Component {
 		return(
 			<View style={styles.detailwrapper}>
 				<Text style={styles.email}>{this.props.allDetail.email}</Text>
-				<Icon style={styles.emailOne} name="chevron-right" size={15} color="#dbd6d6" />
+				<Icon style={styles.emailOne} name="chevron-right" size={10} color="#898585" />
 			</View>
 		);
 	}
@@ -25,7 +25,7 @@ const styles = {
 		justifyContent: 'flex-start',
 		height: 40,
 		borderBottomWidth: 1,
-		borderBottomColor: '#dbd6d6',  
+		borderBottomColor: '#c9c9c9',  
 		paddingLeft: 10,
 		position: 'relative',
 		alignItems: 'center'
