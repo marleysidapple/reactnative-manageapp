@@ -33,6 +33,7 @@ const styles = {
 
 	email:{
 		flex: 1,
+		color: '#494646'
 	},
 
 
