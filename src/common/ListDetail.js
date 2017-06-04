@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class ListDetail extends Component {
@@ -8,12 +8,20 @@ class ListDetail extends Component {
 		super(props);
 	}
 
+
+	onPressingListItem(id){
+		console.log(id);
+	}
+
+
 	render(){
 		return(
+			<TouchableOpacity onPress={this.onPressingListItem.bind(this, this.props.allDetail.id)}>
 			<View style={styles.detailwrapper}>
 				<Text style={styles.email}>{this.props.allDetail.email}</Text>
-				<Icon style={styles.emailOne} name="chevron-right" size={10} color="#898585" />
+				<Icon style={styles.emailOne} name="angle-right" size={15} color="#898585" />
 			</View>
+			</TouchableOpacity>
 		);
 	}
 }
@@ -38,7 +46,8 @@ const styles = {
 
 
 	emailOne:{
-		width: 40 //this one is necessary
+		width: 40, //this one is necessary
+		textAlign: 'center'
 	}
 
 };
